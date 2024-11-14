@@ -6,8 +6,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import StatePage from './pages/StatePage';
 import CityPage from './pages/CityPage';
-import PostJob from './pages/PostJob';
-// Add these new imports
+import AddAgency from './pages/AddAgency';
 import BlogPage from './pages/BlogPage';
 import ArticlePage from './pages/ArticlePage';
 
@@ -22,8 +21,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/state/:stateId" element={<StatePage />} />
               <Route path="/state/:stateId/:citySlug" element={<CityPage />} />
-              <Route path="/post-job" element={<PostJob />} />
-                            {/* Add these new routes */}
+              <Route path="/add-agency" element={<AddAgency />} />
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/:slug" element={<ArticlePage />} />
             </Routes>

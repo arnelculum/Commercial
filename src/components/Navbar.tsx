@@ -32,10 +32,10 @@ export default function Navbar() {
           {/* Desktop menu */}
           <div className="hidden sm:flex sm:items-center">
             <Link
-              to="/post-job"
+              to="/add-agency"
               className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-[#2557a7] hover:bg-[#1f4d98]"
             >
-              Post a Job
+              Add Your Insurance Agency
             </Link>
           </div>
         </div>
@@ -45,11 +45,11 @@ export default function Navbar() {
       <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden border-t border-gray-200`}>
         <div className="pt-2 pb-3 space-y-1">
           <Link
-            to="/post-job"
+            to="/add-agency"
             className="block px-4 py-2 text-base font-medium text-[#2557a7] hover:bg-gray-50"
             onClick={() => setIsOpen(false)}
           >
-            Post a Job
+            Add Your Insurance Agency
           </Link>
         </div>
       </div>
