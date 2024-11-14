@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { MapPin, Shield, Phone, ArrowLeft } from 'lucide-react';
+import { MapPin, Shield, Phone, ArrowLeft, ChevronDown, ChevronUp } from 'lucide-react';
 import { states } from '../data/states';
 import { Helmet } from 'react-helmet-async';
 import HubSpotForm from '../components/HubSpotForm';
@@ -16,6 +16,8 @@ interface InsuranceProvider {
 }
 
 export default function CityPage() {
+  const [expandedProvider, setExpandedProvider] = useState<string | null>(null);
+  const [showForm, setShowForm] = useState<string | null>(null);
   const { stateId, citySlug } = useParams();
   const state = states.find(s => s.abbreviation.toLowerCase() === stateId?.toLowerCase());
   const city = state?.cities.find(c => c.toLowerCase().replace(/\s+/g, '-') === citySlug);
@@ -56,6 +58,19 @@ export default function CityPage() {
     }))
   };
 
+  const toggleProvider = (providerName: string) => {
+    if (expandedProvider === providerName) {
+      setExpandedProvider(null);
+      setShowForm(null);
+    } else {
+      setExpandedProvider(providerName);
+    }
+  };
+
+  const toggleForm = (providerName: string) => {
+    setShowForm(showForm === providerName ? null : providerName);
+  };
+
   return (
     <>
       <Helmet>
@@ -89,10 +104,33 @@ export default function CityPage() {
         {/* Insurance Provider Listings */}
         <div className="space-y-6 mb-8">
           {insuranceProviders.map((provider, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md p-6">
-              <div className="flex flex-col">
-                <div>
-                  <h2 className="text-2xl font-bold text-blue-900 mb-2">{provider.name}</h2>
+            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+              {/* Provider Header - Always Visible */}
+              <div 
+                className="p-6 cursor-pointer hover:bg-gray-50"
+                onClick={() => toggleProvider(provider.name)}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-4">
+                    {provider.name === "Driver Advantage Insurance" && (
+                      <img 
+                        src="/driveradvantage.webp"
+                        alt="Driver Advantage Logo"
+                        className="h-16 w-auto"
+                      />
+                    )}
+                    <h2 className="text-2xl font-bold text-blue-900">{provider.name}</h2>
+                  </div>
+                  {expandedProvider === provider.name ? 
+                    <ChevronUp className="h-6 w-6 text-blue-600" /> : 
+                    <ChevronDown className="h-6 w-6 text-blue-600" />
+                  }
+                </div>
+              </div>
+
+              {/* Expanded Content */}
+              {expandedProvider === provider.name && (
+                <div className="px-6 pb-6">
                   <p className="text-gray-600 mb-4">{provider.description}</p>
                   
                   <h3 className="text-lg font-semibold text-blue-800 mb-2">Coverage Options:</h3>
@@ -121,28 +159,32 @@ export default function CityPage() {
                       </ul>
                     </>
                   )}
+
+                  <div className="mt-6 space-y-4">
+                    <a
+                      href={`tel:${provider.phone}`}
+                      className="block w-full text-center bg-yellow-500 text-blue-900 font-semibold px-8 py-4 rounded-lg hover:bg-yellow-400 transition-colors"
+                    >
+                      Get Your Free Quote: {provider.phone}
+                    </a>
+                    
+                    <button
+                      onClick={() => toggleForm(provider.name)}
+                      className="block w-full text-center bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      Request Online Quote
+                    </button>
+
+                    {showForm === provider.name && (
+                      <div className="mt-6">
+                        <HubSpotForm />
+                      </div>
+                    )}
+                  </div>
                 </div>
-                
-                <div className="mt-4 text-center">
-                  <a
-                    href={`tel:${provider.phone}`}
-                    className="inline-block bg-yellow-500 text-blue-900 font-semibold px-8 py-4 rounded-lg hover:bg-yellow-400 transition-colors"
-                  >
-                    Get Your Free Quote: {provider.phone}
-                  </a>
-                </div>
-              </div>
+              )}
             </div>
           ))}
-        </div>
-
-        {/* Quote Request Form */}
-        <div id="quote-form" className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-bold text-blue-900 mb-4">Compare Multiple Quotes</h2>
-          <p className="text-gray-600 mb-6">
-            Fill out one form to receive quotes from multiple providers in your area.
-          </p>
-          <HubSpotForm />
         </div>
       </div>
     </>
