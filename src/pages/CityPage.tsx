@@ -104,83 +104,110 @@ export default function CityPage() {
         {/* Insurance Provider Listings */}
         <div className="space-y-6 mb-8">
           {insuranceProviders.map((provider, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div 
+              key={index} 
+              className={`bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ${
+                expandedProvider === provider.name ? 'ring-2 ring-blue-500' : ''
+              }`}
+            >
               {/* Provider Header - Always Visible */}
               <div 
-                className="p-6 cursor-pointer hover:bg-gray-50"
+                className="p-6 cursor-pointer hover:bg-gray-50 transition-colors duration-200"
                 onClick={() => toggleProvider(provider.name)}
               >
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-6">
                     {provider.name === "Driver Advantage Insurance" && (
                       <img 
                         src="/driveradvantage.webp"
                         alt="Driver Advantage Logo"
-                        className="h-16 w-auto"
+                        className="h-20 w-auto"
                       />
                     )}
-                    <h2 className="text-2xl font-bold text-blue-900">{provider.name}</h2>
+                    <div>
+                      <h2 className="text-2xl font-bold text-blue-900 mb-2">{provider.name}</h2>
+                      <p className="text-gray-600 text-sm max-w-2xl">
+                        Your partner in the transportation industry providing customized insurance solutions. Click to learn more about our comprehensive coverage options.
+                      </p>
+                    </div>
                   </div>
-                  {expandedProvider === provider.name ? 
-                    <ChevronUp className="h-6 w-6 text-blue-600" /> : 
-                    <ChevronDown className="h-6 w-6 text-blue-600" />
-                  }
+                  <div className="flex flex-col items-center ml-4">
+                    {expandedProvider === provider.name ? (
+                      <ChevronUp className="h-6 w-6 text-blue-600" />
+                    ) : (
+                      <>
+                        <ChevronDown className="h-6 w-6 text-blue-600" />
+                        <span className="text-sm text-blue-600 mt-1">View Details</span>
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
 
               {/* Expanded Content */}
               {expandedProvider === provider.name && (
-                <div className="px-6 pb-6">
-                  <p className="text-gray-600 mb-4">{provider.description}</p>
-                  
-                  <h3 className="text-lg font-semibold text-blue-800 mb-2">Coverage Options:</h3>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {provider.services.map((service, idx) => (
-                      <span key={idx} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                        {service}
-                      </span>
-                    ))}
-                  </div>
+                <div className="px-6 pb-6 border-t border-gray-100">
+                  <div className="grid md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                      <h3 className="text-lg font-semibold text-blue-800 mb-3">Coverage Options:</h3>
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {provider.services.map((service, idx) => (
+                          <span key={idx} className="bg-blue-50 text-blue-800 px-3 py-1 rounded-full text-sm">
+                            {service}
+                          </span>
+                        ))}
+                      </div>
 
-                  <h3 className="text-lg font-semibold text-blue-800 mb-2">Why Choose Us:</h3>
-                  <ul className="list-disc list-inside mb-4 text-gray-600">
-                    {provider.features.map((feature, idx) => (
-                      <li key={idx} className="mb-1">{feature}</li>
-                    ))}
-                  </ul>
-
-                  {provider.additionalServices && (
-                    <>
-                      <h3 className="text-lg font-semibold text-blue-800 mb-2">Additional Services:</h3>
-                      <ul className="list-disc list-inside mb-4 text-gray-600">
-                        {provider.additionalServices.map((service, idx) => (
-                          <li key={idx} className="mb-1">{service}</li>
+                      <h3 className="text-lg font-semibold text-blue-800 mb-3">Why Choose Us:</h3>
+                      <ul className="list-disc list-inside mb-6 text-gray-600 space-y-2">
+                        {provider.features.map((feature, idx) => (
+                          <li key={idx}>{feature}</li>
                         ))}
                       </ul>
-                    </>
-                  )}
+                    </div>
 
-                  <div className="mt-6 space-y-4">
-                    <a
-                      href={`tel:${provider.phone}`}
-                      className="block w-full text-center bg-yellow-500 text-blue-900 font-semibold px-8 py-4 rounded-lg hover:bg-yellow-400 transition-colors"
-                    >
-                      Get Your Free Quote: {provider.phone}
-                    </a>
-                    
-                    <button
-                      onClick={() => toggleForm(provider.name)}
-                      className="block w-full text-center bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors"
-                    >
-                      Request Online Quote
-                    </button>
+                    <div className="bg-gray-50 p-6 rounded-lg">
+                      <h3 className="text-xl font-bold text-blue-900 mb-4 text-center">
+                        Get Your Free Quote
+                      </h3>
+                      
+                      <a
+                        href={`tel:${provider.phone}`}
+                        className="block w-full text-center bg-yellow-500 text-blue-900 font-semibold px-8 py-4 rounded-lg hover:bg-yellow-400 transition-colors mb-4"
+                      >
+                        Call Now: {provider.phone}
+                      </a>
 
-                    {showForm === provider.name && (
-                      <div className="mt-6">
-                        <HubSpotForm />
-                      </div>
-                    )}
+                      {!showForm && (
+                        <button
+                          onClick={() => toggleForm(provider.name)}
+                          className="block w-full text-center bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors"
+                        >
+                          Request Online Quote
+                        </button>
+                      )}
+
+                      {showForm === provider.name && (
+                        <div className="mt-4 bg-white p-4 rounded-lg">
+                          <HubSpotForm />
+                        </div>
+                      )}
+                    </div>
                   </div>
+
+                  {provider.additionalServices && (
+                    <div className="mt-6 bg-blue-50 p-4 rounded-lg">
+                      <h3 className="text-lg font-semibold text-blue-800 mb-3">Additional Services:</h3>
+                      <ul className="grid grid-cols-2 gap-2 text-gray-600">
+                        {provider.additionalServices.map((service, idx) => (
+                          <li key={idx} className="flex items-center">
+                            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            {service}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
