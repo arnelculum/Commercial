@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Allow: /state/
+Allow: /state/*/
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemaps
+Sitemap: https://cdljobsbystate.com/sitemap.xml
+
