@@ -32,7 +32,7 @@ const getInsuranceProvidersForState = (stateAbbr: string) => {
   const providers = [];
   
   // Add Driver Advantage only to specified states
-  if (driverAdvantageStates.includes(stateAbbr)) {
+  if (driverAdvantageStates.includes(stateAbbr.toUpperCase())) {
     providers.push({
       name: "Driver Advantage Insurance",
       phone: "208-274-8113",
@@ -264,7 +264,8 @@ export const states: State[] = [
         "Independence",    // Approximately 15 miles southwest of Salem
         "Cottage Grove",   // Approximately 20 miles south of Eugene
         "Sutherlin"        // Approximately 12 miles north of Roseburg
-    ]
+    ],
+    insuranceProviders: getInsuranceProvidersForState("OR")
 },
   {
     "name": "Idaho",
