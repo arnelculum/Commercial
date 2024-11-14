@@ -12,8 +12,8 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <img 
-                src="https://primepulsemedia.com/wp-content/uploads/2024/11/cdljobsbystate2.jpg" 
-                alt="CDL Jobs" 
+                src="https://primepulsemedia.com/wp-content/uploads/2024/11/insurance.png" 
+                alt="Commercial Insurance for Truckers" 
                 className="h-20" // Adjust height as needed
               />
             </Link>
