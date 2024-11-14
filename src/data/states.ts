@@ -10,22 +10,63 @@ interface InsuranceProvider {
   phone: string;
   description: string;
   services: string[];
+  features?: string[];
   website?: string;
-  rating?: number;
-  reviewCount?: number;
+  additionalServices?: string[];
 }
 
 // Define actively hiring states
 const activeHiringStates = [
   'WA', 'OR', 'WY', 'UT', 'AZ', 'CO', 'TX', 'OK', 
   'KS', 'NE', 'MN', 'IA', 'MO', 'AR', 'LA', 'MS', 
-  'WI', 'IL', 'IN', 'DE', 'ID'  // Added Idaho
+  'WI', 'IL', 'IN', 'DE', 'ID'
 ];
 
 // Define states where Driver Advantage operates
 const driverAdvantageStates = [
   'WA', 'OR', 'ID', 'NV', 'UT', 'AZ', 'NM', 'CA', 'MO', 'AR', 'SC'
 ];
+
+// Helper function to get insurance providers based on state
+const getInsuranceProvidersForState = (stateAbbr: string) => {
+  const providers = [];
+  
+  // Add Driver Advantage only to specified states
+  if (driverAdvantageStates.includes(stateAbbr)) {
+    providers.push({
+      name: "Driver Advantage Insurance",
+      phone: "208-274-8113",
+      description: "Your partner in the transportation industry providing customized insurance solutions for your success. Locally owned and operated with over 30 competitive markets, we shop around for YOU!",
+      services: [
+        "Auto Liability",
+        "Excess Liability",
+        "Physical Damage",
+        "Motor Truck Cargo",
+        "General Liability",
+        "Workers Compensation",
+        "Occupational Accident"
+      ],
+      features: [
+        "Driver friendly client portal and ongoing driver training",
+        "Continuous client updates on FMCSA Regulations",
+        "Premium Financing available",
+        "Safety & Compliance focused",
+        "4 Decades of Industry expertise",
+        "Independent Contractor/Fleet customization",
+        "Additional Discounts combining Packages w/ Personal Auto"
+      ],
+      website: "https://driveradvantage.com",
+      additionalServices: [
+        "Factoring",
+        "Fuel Cards",
+        "Compliance & Safety Division",
+        "Equipment Financing"
+      ]
+    });
+  }
+
+  return providers;
+};
 
 export const states: State[] = [
   // Western States
@@ -1475,26 +1516,6 @@ export const isStateHiring = (stateAbbr: string): boolean => {
 };
 
 export const jobListings = generateJobListings();
-
-// Helper function to get insurance providers based on state
-const getInsuranceProvidersForState = (stateAbbr: string) => {
-  const providers = [];
-  
-  // Add Driver Advantage only to specified states
-  if (driverAdvantageStates.includes(stateAbbr)) {
-    providers.push({
-      name: "Driver Advantage Insurance",
-      phone: "208-274-8113",
-      description: "Specializing in comprehensive coverage for trucking companies with competitive rates and personalized service.",
-      services: ["Auto Liability", "Physical Damage", "Cargo Insurance", "General Liability"],
-      website: "https://driveradvantage.com",
-      rating: 4.8,
-      reviewCount: 127
-    });
-  }
-
-  return providers;
-};
 
 // Export the helper function to be used in other components
 export const getInsuranceProviders = (stateAbbr: string) => {

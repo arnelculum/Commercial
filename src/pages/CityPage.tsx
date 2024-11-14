@@ -3,15 +3,16 @@ import { useParams, Link } from 'react-router-dom';
 import { MapPin, Shield, Phone, ArrowLeft } from 'lucide-react';
 import { states } from '../data/states';
 import { Helmet } from 'react-helmet-async';
+import HubSpotForm from '../components/HubSpotForm';
 
 interface InsuranceProvider {
   name: string;
   phone: string;
   description: string;
   services: string[];
+  features: string[];
   website?: string;
-  rating?: number;
-  reviewCount?: number;
+  additionalServices: string[];
 }
 
 export default function CityPage() {
@@ -89,10 +90,12 @@ export default function CityPage() {
         <div className="space-y-6 mb-8">
           {insuranceProviders.map((provider, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md p-6">
-              <div className="flex justify-between items-start">
+              <div className="flex flex-col">
                 <div>
                   <h2 className="text-2xl font-bold text-blue-900 mb-2">{provider.name}</h2>
                   <p className="text-gray-600 mb-4">{provider.description}</p>
+                  
+                  <h3 className="text-lg font-semibold text-blue-800 mb-2">Coverage Options:</h3>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {provider.services.map((service, idx) => (
                       <span key={idx} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
@@ -100,21 +103,32 @@ export default function CityPage() {
                       </span>
                     ))}
                   </div>
-                </div>
-                <div className="text-right">
-                  {provider.rating && (
-                    <div className="text-yellow-500 font-bold mb-1">
-                      {provider.rating} / 5.0
-                      <span className="text-gray-500 text-sm font-normal ml-1">
-                        ({provider.reviewCount} reviews)
-                      </span>
-                    </div>
+
+                  <h3 className="text-lg font-semibold text-blue-800 mb-2">Why Choose Us:</h3>
+                  <ul className="list-disc list-inside mb-4 text-gray-600">
+                    {provider.features.map((feature, idx) => (
+                      <li key={idx} className="mb-1">{feature}</li>
+                    ))}
+                  </ul>
+
+                  {provider.additionalServices && (
+                    <>
+                      <h3 className="text-lg font-semibold text-blue-800 mb-2">Additional Services:</h3>
+                      <ul className="list-disc list-inside mb-4 text-gray-600">
+                        {provider.additionalServices.map((service, idx) => (
+                          <li key={idx} className="mb-1">{service}</li>
+                        ))}
+                      </ul>
+                    </>
                   )}
+                </div>
+                
+                <div className="mt-4 text-center">
                   <a
                     href={`tel:${provider.phone}`}
-                    className="inline-block bg-yellow-500 text-blue-900 font-semibold px-6 py-3 rounded-lg hover:bg-yellow-400 transition-colors"
+                    className="inline-block bg-yellow-500 text-blue-900 font-semibold px-8 py-4 rounded-lg hover:bg-yellow-400 transition-colors"
                   >
-                    Call {provider.phone}
+                    Get Your Free Quote: {provider.phone}
                   </a>
                 </div>
               </div>
@@ -128,7 +142,7 @@ export default function CityPage() {
           <p className="text-gray-600 mb-6">
             Fill out one form to receive quotes from multiple providers in your area.
           </p>
-          <div id="hubspot-form"></div>
+          <HubSpotForm />
         </div>
       </div>
     </>
