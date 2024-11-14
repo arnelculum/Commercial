@@ -36,8 +36,10 @@ const getInsuranceProvidersForState = (stateAbbr: string) => {
     providers.push({
       name: "Driver Advantage Insurance",
       phone: "208-274-8113",
-      description: "Your partner in the transportation industry providing customized insurance solutions for your success. Locally owned and operated with over 30 competitive markets, we shop around for YOU!",
+      description: "Your Partner in the Transportation Industry providing Customized Insurance Solutions for Your Success. Whether you're an owner-operator, run a small fleet, or manage a large trucking company, our insurance solutions are tailored to protect your assets and keep you on the road.",
       services: [
+        "Motor Carrier Insurance",
+        "Commercial Insurance",
         "Auto Liability",
         "Excess Liability",
         "Physical Damage",
@@ -47,13 +49,19 @@ const getInsuranceProvidersForState = (stateAbbr: string) => {
         "Occupational Accident"
       ],
       features: [
+        "Locally owned and operated",
+        "Over 30 competitive Markets: WE shop around for YOU!",
         "Driver friendly client portal and ongoing driver training",
         "Continuous client updates on FMCSA Regulations",
+        "We take advantage of all discounts that benefit your premium",
+        "We explore all deductible options",
         "Premium Financing available",
-        "Safety & Compliance focused",
-        "4 Decades of Industry expertise",
+        "An agency centered around Safety & Compliance",
+        "Passionate about the Transportation Industry & care about your success",
         "Independent Contractor/Fleet customization",
-        "Additional Discounts combining Packages w/ Personal Auto"
+        "Additional Discounts combining Packages w/ Personal Auto",
+        "4 Decades of Industry expertise",
+        "An agency committed to the Transportation Industry and supporting drivers"
       ],
       website: "https://driveradvantage.com",
       additionalServices: [
