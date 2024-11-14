@@ -121,17 +121,17 @@ export default function HomePage() {
       <div className="bg-blue-900 text-white mt-12 py-16">
         <div className="max-w-3xl mx-auto text-center px-4">
           <h2 className="text-3xl font-bold mb-4">
-            Need Help Finding the Right Coverage?
+            Looking for the Right Insurance Coverage?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Our insurance experts are here to help you find the perfect coverage for your trucking business.
+            Connect with experienced insurance agencies that understand the unique needs of your trucking business. Compare providers and find the perfect coverage today.
           </p>
-          <a
-            href="tel:208-274-8113"
+          <Link
+            to="/state"
             className="inline-block bg-yellow-500 text-blue-900 font-semibold px-8 py-4 rounded-lg hover:bg-yellow-400 transition-colors text-lg"
           >
-            Call (208) 274-8113
-          </a>
+            Find Insurance Providers
+          </Link>
         </div>
       </div>
     </>

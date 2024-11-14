@@ -23,32 +23,13 @@ export default function CityPage() {
     return <div>Location not found</div>;
   }
 
+  // Get insurance providers for this state
+  const insuranceProviders = state.insuranceProviders || [];
+
   // SEO metadata
   const metaTitle = `Commercial Truck Insurance Providers in ${city}, ${state.abbreviation} | Find Local Coverage`;
   const metaDescription = `Compare top commercial truck insurance providers in ${city}, ${state.abbreviation}. Get quotes for auto liability, physical damage, and cargo coverage from local insurance agencies.`;
   const metaKeywords = `commercial truck insurance ${city}, trucking insurance providers ${state.name}, truck insurance agents ${city}, commercial vehicle insurance ${city} ${state.abbreviation}`;
-
-  // Local Insurance Providers
-  const insuranceProviders: InsuranceProvider[] = [
-    {
-      name: "Driver Advantage Insurance",
-      phone: "208-274-8113",
-      description: "Specializing in comprehensive coverage for trucking companies with competitive rates and personalized service.",
-      services: ["Auto Liability", "Physical Damage", "Cargo Insurance", "General Liability"],
-      website: "https://driveradvantage.com",
-      rating: 4.8,
-      reviewCount: 127
-    },
-    {
-      name: "Trucking Insurance Specialists",
-      phone: "555-0123",
-      description: "Over 20 years of experience serving the trucking industry with tailored insurance solutions.",
-      services: ["Commercial Auto", "Workers Comp", "Cargo Coverage", "Umbrella Insurance"],
-      rating: 4.6,
-      reviewCount: 89
-    }
-    // Add more providers as needed
-  ];
 
   // Insurance Directory Schema
   const directorySchema = {

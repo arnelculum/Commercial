@@ -2,6 +2,17 @@ interface State {
   name: string;
   abbreviation: string;
   cities: string[];
+  insuranceProviders?: InsuranceProvider[];
+}
+
+interface InsuranceProvider {
+  name: string;
+  phone: string;
+  description: string;
+  services: string[];
+  website?: string;
+  rating?: number;
+  reviewCount?: number;
 }
 
 // Define actively hiring states
@@ -9,6 +20,11 @@ const activeHiringStates = [
   'WA', 'OR', 'WY', 'UT', 'AZ', 'CO', 'TX', 'OK', 
   'KS', 'NE', 'MN', 'IA', 'MO', 'AR', 'LA', 'MS', 
   'WI', 'IL', 'IN', 'DE', 'ID'  // Added Idaho
+];
+
+// Define states where Driver Advantage operates
+const driverAdvantageStates = [
+  'WA', 'OR', 'ID', 'NV', 'UT', 'AZ', 'NM', 'CA', 'MO', 'AR', 'SC'
 ];
 
 export const states: State[] = [
@@ -70,12 +86,14 @@ export const states: State[] = [
         "Temecula",    // Approximately 80 miles from Los Angeles
         "Hemet",       // Approximately 80 miles from Los Angeles
         "Lake Arrowhead" // Approximately 80 miles from Los Angeles
-    ]
+    ],
+    insuranceProviders: getInsuranceProvidersForState("CA")
 },
   {
     name: "Nevada",
     abbreviation: "NV",
-    cities: ["Las Vegas", "Reno", "Henderson", "North Las Vegas", "Sparks"]
+    cities: ["Las Vegas", "Reno", "Henderson", "North Las Vegas", "Sparks"],
+    insuranceProviders: getInsuranceProvidersForState("NV")
   },
   {
     name: "Montana",
@@ -840,7 +858,6 @@ export const states: State[] = [
         "Apple Valley",       // Approximately 20 miles south of Minneapolis, population: 55,336
         "Edina",              // Approximately 10 miles southwest of Minneapolis, population: 53,348
         "Minnetonka",         // Approximately 10 miles west of Minneapolis, population: 52,463
-        "St. Louis Park",     // Approximately 5 miles west of Minneapolis, population: 49,697
         "Shakopee",           // Approximately 20 miles southwest of Minneapolis, population: 47,158
         "Mankato",            // Approximately 80 miles southwest of Minneapolis, population: 45,742
         "Moorhead",           // Approximately 230 miles northwest of Minneapolis, population: 45,202
@@ -1458,3 +1475,28 @@ export const isStateHiring = (stateAbbr: string): boolean => {
 };
 
 export const jobListings = generateJobListings();
+
+// Helper function to get insurance providers based on state
+const getInsuranceProvidersForState = (stateAbbr: string) => {
+  const providers = [];
+  
+  // Add Driver Advantage only to specified states
+  if (driverAdvantageStates.includes(stateAbbr)) {
+    providers.push({
+      name: "Driver Advantage Insurance",
+      phone: "208-274-8113",
+      description: "Specializing in comprehensive coverage for trucking companies with competitive rates and personalized service.",
+      services: ["Auto Liability", "Physical Damage", "Cargo Insurance", "General Liability"],
+      website: "https://driveradvantage.com",
+      rating: 4.8,
+      reviewCount: 127
+    });
+  }
+
+  return providers;
+};
+
+// Export the helper function to be used in other components
+export const getInsuranceProviders = (stateAbbr: string) => {
+  return getInsuranceProvidersForState(stateAbbr);
+};
