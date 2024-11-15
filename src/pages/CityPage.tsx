@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, Shield, Phone, ArrowLeft, ChevronDown, ChevronUp } from 'lucide-react';
 import { states } from '../data/states';
 import { Helmet } from 'react-helmet-async';
-import HubSpotForm from '../components/HubSpotForm';
 
 interface InsuranceProvider {
   name: string;
@@ -76,6 +75,22 @@ export default function CityPage() {
   const toggleForm = (providerName: string) => {
     setShowForm(showForm === providerName ? null : providerName);
   };
+
+  useEffect(() => {
+    // Load JotForm script when form is shown
+    if (showForm) {
+      const script = document.createElement('script');
+      script.src = 'https://form.jotform.com/jsform/243191254141145';
+      script.type = 'text/javascript';
+      script.async = true;
+      document.body.appendChild(script);
+
+      return () => {
+        // Cleanup script when component unmounts or form is hidden
+        document.body.removeChild(script);
+      };
+    }
+  }, [showForm]);
 
   return (
     <>
@@ -195,7 +210,7 @@ export default function CityPage() {
 
                       {showForm === provider.name && (
                         <div className="mt-4 bg-white p-4 rounded-lg">
-                          <HubSpotForm />
+                          <div id="jotform-container"></div>
                         </div>
                       )}
                     </div>
