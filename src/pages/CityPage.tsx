@@ -83,11 +83,30 @@ export default function CityPage() {
       script.src = 'https://form.jotform.com/jsform/243191254141145';
       script.type = 'text/javascript';
       script.async = true;
+      
+      // Add event listener to ensure script loads before trying to render form
+      script.addEventListener('load', () => {
+        // Give the script a moment to initialize
+        setTimeout(() => {
+          const container = document.getElementById(`jotform-container-${showForm}`);
+          if (container) {
+            container.innerHTML = ''; // Clear any existing content
+            new window.JF.FormPicker({
+              id: '243191254141145',
+              container: `jotform-container-${showForm}`
+            });
+          }
+        }, 100);
+      });
+      
       document.body.appendChild(script);
 
       return () => {
         // Cleanup script when component unmounts or form is hidden
-        document.body.removeChild(script);
+        const existingScript = document.querySelector(`script[src="${script.src}"]`);
+        if (existingScript) {
+          document.body.removeChild(existingScript);
+        }
       };
     }
   }, [showForm]);
@@ -210,7 +229,7 @@ export default function CityPage() {
 
                       {showForm === provider.name && (
                         <div className="mt-4 bg-white p-4 rounded-lg">
-                          <div id="jotform-container"></div>
+                          <div id={`jotform-container-${provider.name}`}></div>
                         </div>
                       )}
                     </div>
