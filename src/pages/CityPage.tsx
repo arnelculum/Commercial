@@ -29,12 +29,12 @@ export default function CityPage() {
   // Get insurance providers for this state
   const insuranceProviders = state.insuranceProviders || [];
 
-  // SEO metadata
-  const metaTitle = `Commercial Truck Insurance Providers in ${city}, ${state.abbreviation} | Find Local Coverage`;
-  const metaDescription = `Compare top commercial truck insurance providers in ${city}, ${state.abbreviation}. Get quotes for auto liability, physical damage, and cargo coverage from local insurance agencies.`;
-  const metaKeywords = `commercial truck insurance ${city}, trucking insurance providers ${state.name}, truck insurance agents ${city}, commercial vehicle insurance ${city} ${state.abbreviation}`;
+  // SEO metadata - Updated per requirements
+  const metaTitle = `Commercial Trucking Insurance in ${city}, ${state.abbreviation}`;
+  
+  const metaDescription = `Are you looking for commercial trucking insurance in ${city}, ${state.abbreviation}? Check out our directory of insurance providers servicing your state and city.`;
 
-  // Insurance Directory Schema
+  // Updated schema with more specific location data
   const directorySchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -51,9 +51,15 @@ export default function CityPage() {
           "name": city,
           "containedInPlace": {
             "@type": "State",
-            "name": state.name
+            "name": state.name,
+            "address": {
+              "@type": "PostalAddress",
+              "addressRegion": state.abbreviation,
+              "addressCountry": "US"
+            }
           }
-        }
+        },
+        "serviceType": "Commercial Truck Insurance"
       }
     }))
   };
@@ -76,7 +82,7 @@ export default function CityPage() {
       <Helmet>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={metaKeywords} />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`https://commercialinsurancefortruckers.com/state/${stateId?.toLowerCase()}/${citySlug}`} />
         <script type="application/ld+json">
           {JSON.stringify(directorySchema)}

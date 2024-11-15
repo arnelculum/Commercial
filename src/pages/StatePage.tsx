@@ -12,16 +12,17 @@ export default function StatePage() {
     return <div>State not found</div>;
   }
 
-  const cityList = state.cities.join(', ');
-  const metaDescription = `Find commercial truck insurance providers in ${state.name}. Compare quotes for auto liability, physical damage, and cargo coverage in ${cityList}.`;
-  const metaKeywords = `commercial truck insurance ${state.name}, trucking insurance ${cityList}, truck insurance providers ${state.name}, commercial auto insurance ${state.name}`;
+  // SEO metadata - Updated per requirements
+  const metaTitle = `Commercial Trucking Insurance in ${state.name}`;
+  
+  const metaDescription = `Are you looking for commercial trucking insurance in ${state.name}? Check out our directory of insurance providers servicing your state.`;
 
   return (
     <>
       <Helmet>
-        <title>Commercial Truck Insurance in {state.name} | Compare Local Providers</title>
+        <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={metaKeywords} />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`https://commercialinsurancefortruckers.com/state/${stateId?.toLowerCase()}`} />
       </Helmet>
       
@@ -31,7 +32,7 @@ export default function StatePage() {
             Commercial Truck Insurance in {state.name}
           </h1>
           <p className="text-xl text-gray-600">
-            Find and compare insurance providers in {cityList}
+            Compare insurance providers and coverage options
           </p>
         </div>
 
