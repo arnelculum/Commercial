@@ -81,105 +81,415 @@ export const states: State[] = [
   {
     name: "Washington",
     abbreviation: "WA",
-    cities: ["Seattle", "Spokane", "Tacoma", "Vancouver", "Bellevue"],
+    cities: [
+      "Seattle",
+      "Spokane",
+      "Tacoma",
+      "Vancouver",
+      "Bellevue",
+      "Kent",
+      "Everett",
+      "Renton",
+      "Federal Way",
+      "Yakima",
+      "Bellingham",
+      "Kirkland",
+      "Auburn",
+      "Marysville",
+      "Richland",
+      "Kennewick",
+      "Bothell",
+      "Lakewood",
+      "Redmond",
+      "Sammamish",
+      "Olympia",
+      "Lacey",
+      "Bremerton",
+      "Puyallup",
+      "Issaquah",
+      "Mount Vernon",
+      "Wenatchee",
+      "Moses Lake",
+      "Pullman",
+      "South Hill",
+      "Spanaway",
+      "Camas",
+      "Burlington",
+      "University Place",
+      "East Wenatchee",
+      "SeaTac",
+      "Des Moines",
+      "Lake Stevens",
+      "Montesano",
+      "Anacortes",
+      "Port Orchard"
+    ],
     insuranceProviders: getInsuranceProvidersForState("WA")
   },
   {
     name: "Oregon",
     abbreviation: "OR",
-    cities: ["Portland", "Salem", "Eugene", "Gresham", "Hillsboro"],
+    cities: [
+      "Portland",
+      "Salem",
+      "Eugene",
+      "Gresham",
+      "Hillsboro",
+      "Beaverton",
+      "Bend",
+      "Medford",
+      "Springfield",
+      "Corvallis",
+      "Albany",
+      "Tigard",
+      "Lake Oswego",
+      "Keizer",
+      "Grants Pass",
+      "McMinnville",
+      "Redmond",
+      "Tualatin",
+      "West Linn",
+      "Ashland",
+      "Oregon City",
+      "Woodburn",
+      "Sherwood",
+      "Canby",
+      "Pendleton",
+      "Clackamas",
+      "Klamath Falls",
+      "Happy Valley",
+      "Fairview",
+      "Central Point",
+      "Cottage Grove",
+      "La Grande",
+      "Baker City",
+      "Silverton",
+      "Newport",
+      "Hood River",
+      "Tillamook",
+      "Estacada",
+      "Scappoose",
+      "Sandy",
+      "St. Helens",
+      "Warrenton",
+      "Seaside",
+      "Coos Bay",
+      "North Bend",
+      "Florence"
+    ],
     insuranceProviders: getInsuranceProvidersForState("OR")
   },
   {
     name: "Idaho",
     abbreviation: "ID",
-    cities: ["Boise", "Meridian", "Nampa", "Idaho Falls", "Pocatello", "Twin Falls", "Caldwell", "Coeur d'Alene", "Post Falls"],
+    cities: [
+      "Boise",
+      "Nampa",
+      "Meridian",
+      "Idaho Falls",
+      "Pocatello",
+      "Caldwell",
+      "Coeur d'Alene",
+      "Twin Falls",
+      "Lewiston",
+      "Post Falls",
+      "Mountain Home",
+      "Sandpoint",
+      "Moscow",
+      "Rexburg",
+      "Ammon",
+      "Eagle",
+      "Chubbuck",
+      "Blackfoot",
+      "Burley",
+      "Ketchum",
+      "Hailey",
+      "Shelley",
+      "Fruitland",
+      "Payette",
+      "Star",
+      "Weiser",
+      "Montpelier",
+      "Sandpoint",
+      "Emmett",
+      "Cascade"
+    ],
     insuranceProviders: getInsuranceProvidersForState("ID")
   },
   {
     name: "Nevada",
     abbreviation: "NV",
-    cities: ["Las Vegas", "Reno", "Henderson", "North Las Vegas", "Sparks", "Carson City"],
+    cities: [
+      "Las Vegas",
+      "Henderson",
+      "Reno",
+      "North Las Vegas",
+      "Paradise",
+      "Spring Valley",
+      "Sparks",
+      "Carson City",
+      "Elko",
+      "Boulder City",
+      "Fernley",
+      "Mesquite",
+      "Pahrump",
+      "Fallon",
+      "Dayton",
+      "Winnemucca",
+      "Ely",
+      "Gardnerville",
+      "Stateline",
+      "Minden"
+    ],
     insuranceProviders: getInsuranceProvidersForState("NV")
   },
   {
     name: "Utah",
     abbreviation: "UT",
-    cities: ["Salt Lake City", "West Valley City", "Provo", "West Jordan", "Orem", "Sandy"],
+    cities: [
+      "Salt Lake City",
+      "West Valley City",
+      "Provo",
+      "West Jordan",
+      "Orem",
+      "Sandy",
+      "Ogden",
+      "St. George",
+      "Layton",
+      "Taylorsville",
+      "South Jordan",
+      "Logan",
+      "Murray",
+      "Draper",
+      "Bountiful",
+      "Lehi",
+      "Spanish Fork",
+      "Pleasant Grove",
+      "Tooele",
+      "Eagle Mountain",
+      "American Fork",
+      "Kaysville",
+      "Clearfield",
+      "Cedar City",
+      "Springville",
+      "Holladay",
+      "Farmington",
+      "Brigham City",
+      "Monticello",
+      "Richfield",
+      "Heber City",
+      "Payson",
+      "Smithfield",
+      "Washington",
+      "Nibley",
+      "North Ogden",
+      "South Ogden",
+      "Millcreek",
+      "Cottonwood Heights"
+    ],
     insuranceProviders: getInsuranceProvidersForState("UT")
   },
   {
     name: "Arizona",
     abbreviation: "AZ",
-    cities: ["Phoenix", "Tucson", "Mesa", "Chandler", "Scottsdale", "Gilbert", "Glendale", "Tempe"],
+    cities: [
+      "Phoenix",
+      "Tucson",
+      "Mesa",
+      "Chandler",
+      "Glendale",
+      "Scottsdale",
+      "Gilbert",
+      "Tempe",
+      "Peoria",
+      "Surprise",
+      "Yuma",
+      "Avondale",
+      "Goodyear",
+      "Flagstaff",
+      "Lake Havasu City",
+      "Buckeye",
+      "Casa Grande",
+      "Sierra Vista",
+      "Maricopa",
+      "Oro Valley",
+      "Apache Junction",
+      "Queen Creek",
+      "Bullhead City",
+      "Prescott Valley",
+      "San Luis",
+      "Show Low",
+      "Cottonwood",
+      "Kingman",
+      "Eloy",
+      "Globe",
+      "Payson",
+      "Chino Valley",
+      "Litchfield Park",
+      "Camp Verde",
+      "Sedona",
+      "Wickenburg",
+      "Tuba City",
+      "Pinetop-Lakeside",
+      "Fountain Hills"
+    ],
     insuranceProviders: getInsuranceProvidersForState("AZ")
   },
   {
     name: "New Mexico",
     abbreviation: "NM",
-    cities: ["Albuquerque", "Las Cruces", "Rio Rancho", "Santa Fe", "Roswell"],
+    cities: [
+      "Albuquerque",
+      "Las Cruces",
+      "Rio Rancho",
+      "Santa Fe",
+      "Roswell",
+      "Farmington",
+      "Clovis",
+      "Hobbs",
+      "Carlsbad",
+      "Gallup",
+      "Los Lunas",
+      "Deming",
+      "Silver City",
+      "Sunland Park",
+      "Belen",
+      "Portales",
+      "Ruidoso",
+      "Espanola",
+      "Aztec",
+      "Truth or Consequences",
+      "Socorro",
+      "Tucumcari"
+    ],
     insuranceProviders: getInsuranceProvidersForState("NM")
   },
   {
     name: "California",
     abbreviation: "CA",
     cities: [
-        "Los Angeles", 
-        "San Francisco", 
-        "San Diego", 
-        "Sacramento", 
-        "San Jose",
-        "Bakersfield", // Approximately 110 miles from Los Angeles
-        "Fresno",      // Approximately 220 miles from San Francisco
-        "Riverside",   // Approximately 55 miles from Los Angeles
-        "Stockton",    // Approximately 90 miles from San Francisco
-        "Modesto",     // Approximately 90 miles from San Francisco
-        "Santa Rosa",  // Approximately 75 miles from San Francisco
-        "Chico",       // Approximately 90 miles from Sacramento
-        "Visalia",     // Approximately 190 miles from Los Angeles
-        "San Luis Obispo", // Approximately 190 miles from Los Angeles
-        "Palm Springs", // Approximately 110 miles from Los Angeles
-        "Napa",        // Approximately 50 miles from San Francisco
-        "Manteca",     // Approximately 75 miles from San Francisco
-        "Merced",      // Approximately 120 miles from San Francisco
-        "Hanford",     // Approximately 190 miles from Los Angeles
-        "Lodi",        // Approximately 80 miles from San Francisco
-        "Turlock",     // Approximately 100 miles from San Francisco
-        "Burlingame",  // Approximately 20 miles from San Francisco
-        "Ceres",       // Approximately 90 miles from San Francisco
-        "Simi Valley",  // Approximately 40 miles from Los Angeles
-        "Lakewood",    // Approximately 25 miles from Los Angeles
-        "Torrance",    // Approximately 20 miles from Los Angeles
-        "Culver City", // Approximately 10 miles from Los Angeles
-        "Santa Monica", // Approximately 15 miles from Los Angeles
-        "Redondo Beach", // Approximately 20 miles from Los Angeles
-        "Clovis",      // Approximately 200 miles from San Francisco
-        "Brea",        // Approximately 30 miles from Los Angeles
-        "Huntington Beach", // Approximately 35 miles from Los Angeles
-        "Fullerton",   // Approximately 25 miles from Los Angeles
-        "Costa Mesa",  // Approximately 40 miles from Los Angeles
-        "Irvine",      // Approximately 40 miles from Los Angeles
-        "Orange",      // Approximately 30 miles from Los Angeles
-        "Mission Viejo", // Approximately 50 miles from Los Angeles
-        "Lake Elsinore", // Approximately 60 miles from Los Angeles
-        "Temecula",    // Approximately 80 miles from Los Angeles
-        "Murrieta",    // Approximately 80 miles from Los Angeles
-        "Chula Vista",  // Approximately 7 miles from San Diego
-        "El Cajon",    // Approximately 20 miles from San Diego
-        "La Mesa",     // Approximately 10 miles from San Diego
-        "Encinitas",   // Approximately 30 miles from San Diego
-        "Carlsbad",    // Approximately 35 miles from San Diego
-        "Oceanside",   // Approximately 40 miles from San Diego
-        "Vista",       // Approximately 40 miles from San Diego
-        "San Marcos",  // Approximately 35 miles from San Diego
-        "Escondido",   // Approximately 30 miles from San Diego
-        "Fallbrook",   // Approximately 50 miles from San Diego
-        "Temecula",    // Approximately 80 miles from Los Angeles
-        "Hemet",       // Approximately 80 miles from Los Angeles
-        "Lake Arrowhead" // Approximately 80 miles from Los Angeles
+      "Los Angeles",
+      "San Diego",
+      "San Jose",
+      "San Francisco",
+      "Fresno",
+      "Sacramento",
+      "Long Beach",
+      "Oakland",
+      "Bakersfield",
+      "Anaheim",
+      "Santa Ana",
+      "Riverside",
+      "Stockton",
+      "Chula Vista",
+      "Irvine",
+      "Fremont",
+      "San Bernardino",
+      "Modesto",
+      "Oxnard",
+      "Fontana",
+      "Moreno Valley",
+      "Huntington Beach",
+      "Glendale",
+      "Santa Clarita",
+      "Garden Grove",
+      "Santa Rosa",
+      "Oceanside",
+      "Rancho Cucamonga",
+      "Ontario",
+      "Lancaster",
+      "Elk Grove",
+      "Corona",
+      "Palmdale",
+      "Salinas",
+      "Hayward",
+      "Pomona",
+      "Escondido",
+      "Sunnyvale",
+      "Torrance",
+      "Pasadena",
+      "Fullerton",
+      "Orange",
+      "Thousand Oaks",
+      "Visalia",
+      "Simi Valley",
+      "Concord",
+      "Roseville",
+      "Santa Clara",
+      "Victorville",
+      "Vallejo",
+      "Berkeley",
+      "El Monte",
+      "Downey",
+      "Costa Mesa",
+      "Inglewood",
+      "Carlsbad",
+      "Fairfield",
+      "Ventura",
+      "West Covina",
+      "Murrieta",
+      "Richmond",
+      "Burbank",
+      "Antioch",
+      "Daly City",
+      "Temecula",
+      "Rialto",
+      "Compton",
+      "Clovis",
+      "South Gate",
+      "Vista",
+      "Mission Viejo",
+      "Vacaville",
+      "San Mateo",
+      "Camarillo",
+      "Perris",
+      "Lakewood",
+      "Bellflower",
+      "Napa",
+      "Chico",
+      "San Marcos",
+      "Redwood City",
+      "Chino",
+      "Milpitas",
+      "Alhambra",
+      "Baldwin Park",
+      "Palo Alto",
+      "Lynnwood",
+      "Cypress",
+      "La Habra",
+      "Tustin",
+      "Yuba City",
+      "Santee",
+      "Lake Elsinore",
+      "Hesperia",
+      "Manteca",
+      "Apple Valley",
+      "San Leandro",
+      "Lodi",
+      "Culver City",
+      "Brea",
+      "Tulare",
+      "Hawthorne",
+      "Redding",
+      "Pittsburg",
+      "Ceres",
+      "San Gabriel",
+      "La Mesa",
+      "Burlingame",
+      "Dublin",
+      "Folsom",
+      "Camarillo",
+      "Encinitas",
+      "San Carlos",
+      "Lemoore",
+      "Saratoga",
+      "Huntington Park",
+      "Bell Gardens",
+      "La Mirada",
+      "West Sacramento"
     ],
     insuranceProviders: getInsuranceProvidersForState("CA")
-},
+  },
   {
     name: "Montana",
     abbreviation: "MT",
@@ -818,7 +1128,55 @@ export const states: State[] = [
   {
     name: "South Carolina",
     abbreviation: "SC",
-    cities: ["Columbia", "Charleston", "North Charleston", "Mount Pleasant", "Rock Hill", "Greenville"]
+    cities: [
+      "Columbia",
+      "Charleston",
+      "North Charleston",
+      "Greenville",
+      "Summerville",
+      "Spartanburg",
+      "Rock Hill",
+      "Mount Pleasant",
+      "Gaffney",
+      "Anderson",
+      "Florence",
+      "Goose Creek",
+      "Aiken",
+      "Myrtle Beach",
+      "Greer",
+      "Mauldin",
+      "Sumter",
+      "Hilton Head Island",
+      "Bennettsville",
+      "West Columbia",
+      "Easley",
+      "Lancaster",
+      "Cheraw",
+      "Walhalla",
+      "Bamberg",
+      "Beaufort",
+      "Orangeburg",
+      "Darlington",
+      "Union",
+      "Pickens",
+      "Seneca",
+      "Cayce",
+      "Lugoff",
+      "Woodruff",
+      "Hartsville",
+      "Clinton",
+      "Kingstree",
+      "Santee",
+      "St. Andrews",
+      "Fort Mill",
+      "Bishopville",
+      "Loris",
+      "Dillon",
+      "Marion",
+      "Cherokee",
+      "Saluda"
+    ],
+    insuranceProviders: getInsuranceProvidersForState("SC")
   },
   {
     name: "Georgia",
@@ -1018,131 +1376,112 @@ export const states: State[] = [
     "name": "Missouri",
     "abbreviation": "MO",
     "cities": [
-        "Kansas City",        // Major city, population: 510,704
-        "St. Louis",          // Major city, population: 281,754
-        "Springfield",        // Major city, population: 170,188
-        "Columbia",           // Major city, population: 129,330
-        "Independence",       // Approximately 10 miles east of Kansas City, population: 120,922
-        "Lee's Summit",       // Approximately 20 miles southeast of Kansas City, population: 104,184
-        "O'Fallon",           // Approximately 35 miles northwest of St. Louis, population: 94,074
-        "St. Joseph",         // Approximately 55 miles north of Kansas City, population: 70,634
-        "St. Charles",        // Approximately 25 miles northwest of St. Louis, population: 71,800
-        "Blue Springs",       // Approximately 20 miles east of Kansas City, population: 60,539
-        "Florissant",         // Approximately 15 miles northwest of St. Louis, population: 52,533
-        "Joplin",             // Approximately 150 miles south of Kansas City, population: 51,762
-        "Chesterfield",       // Approximately 20 miles west of St. Louis, population: 49,999
-        "Jefferson City",     // State capital, approximately 125 miles west of St. Louis, population: 42,552
-        "Cape Girardeau",     // Approximately 115 miles southeast of St. Louis, population: 39,540
-        "Wildwood",           // Approximately 25 miles west of St. Louis, population: 35,417
-        "University City",    // Approximately 10 miles west of St. Louis, population: 34,165
-        "Ballwin",            // Approximately 20 miles west of St. Louis, population: 30,404
-        "Raytown",            // Approximately 10 miles southeast of Kansas City, population: 29,526
-        "Liberty",            // Approximately 15 miles northeast of Kansas City, population: 30,167
-        "Wentzville",         // Approximately 40 miles northwest of St. Louis, population: 44,372
-        "Kirkwood",           // Approximately 15 miles southwest of St. Louis, population: 27,659
-        "Maryland Heights",   // Approximately 20 miles northwest of St. Louis, population: 27,472
-        "Gladstone",          // Approximately 10 miles north of Kansas City, population: 27,063
-        "Grandview",          // Approximately 15 miles south of Kansas City, population: 25,431
-        "Hazelwood",          // Approximately 20 miles northwest of St. Louis, population: 25,117
-        "Belton",             // Approximately 20 miles south of Kansas City, population: 23,116
-        "Webster Groves",     // Approximately 10 miles southwest of St. Louis, population: 23,055
-        "Sedalia",            // Approximately 90 miles east of Kansas City, population: 21,387
-        "Rolla",              // Approximately 100 miles southwest of St. Louis, population: 20,169
-        "Raymore",            // Approximately 25 miles south of Kansas City, population: 22,941
-        "Nixa",               // Approximately 15 miles south of Springfield, population: 23,257
-        "Ozark",              // Approximately 20 miles south of Springfield, population: 21,284
-        "Warrensburg",        // Approximately 60 miles east of Kansas City, population: 20,168
-        "Ferguson",           // Approximately 15 miles north of St. Louis, population: 18,527
-        "Arnold",             // Approximately 20 miles south of St. Louis, population: 20,858
-        "Poplar Bluff",       // Approximately 150 miles south of St. Louis, population: 16,937
-        "Rolla",              // Approximately 100 miles southwest of St. Louis, population: 20,169
-        "Sikeston",           // Approximately 145 miles south of St. Louis, population: 16,291
-        "Farmington",         // Approximately 75 miles south of St. Louis, population: 18,515
-        "Hannibal",           // Approximately 100 miles north of St. Louis, population: 17,266
-        "Kirksville",         // Approximately 150 miles north of Columbia, population: 17,505
-        "Lebanon",            // Approximately 55 miles northeast of Springfield, population: 14,688
-        "Marshall",           // Approximately 80 miles east of Kansas City, population: 12,711
-        "Moberly",            // Approximately 35 miles north of Columbia, population: 13,974
-        "Neosho",             // Approximately 20 miles south of Joplin, population: 12,512
-        "West Plains",        // Approximately 100 miles east of Springfield, population: 12,089
-        "Carthage",           // Approximately 15 miles northeast of Joplin, population: 14,746
-        "Excelsior Springs",  // Approximately 30 miles northeast of Kansas City, population: 10,570
-        "Mexico",             // Approximately 40 miles northeast of Columbia, population: 11,483
-        "Fulton",             // Approximately 25 miles northeast of Jefferson City, population: 12,650
-        "Bridgeton",          // Approximately 20 miles northwest of St. Louis, population: 11,418
-        "Maryville",          // Approximately 95 miles north of Kansas City, population: 10,903
-        "Kennett",            // Approximately 200 miles south of St. Louis, population: 10,439
-        "Harrisonville",      // Approximately 35 miles south of Kansas City, population: 10,129
-            ]
+      "Kansas City",
+      "St. Louis",
+      "Springfield",
+      "Columbia",
+      "Independence",
+      "Lee's Summit",
+      "O'Fallon",
+      "St. Joseph",
+      "St. Charles",
+      "Blue Springs",
+      "Jefferson City",
+      "Cape Girardeau",
+      "Wildwood",
+      "University City",
+      "Raytown",
+      "Florissant",
+      "Ballwin",
+      "Chesterfield",
+      "Clayton",
+      "Liberty",
+      "Joplin",
+      "Glen Carbon",
+      "Maryland Heights",
+      "Wentzville",
+      "Harrisonville",
+      "Sedalia",
+      "Bridgeton",
+      "Webster Groves",
+      "Belton",
+      "Parkville",
+      "Nixa",
+      "Raymore",
+      "Republic",
+      "Kirkwood",
+      "Hannibal",
+      "Poplar Bluff",
+      "Moberly",
+      "Camdenton",
+      "Mexico",
+      "Carthage",
+      "Crestwood",
+      "Marshfield",
+      "Washington",
+      "Rolla",
+      "Farmington",
+      "Sikeston",
+      "Ellisville",
+      "Cameron",
+      "California",
+      "Clinton"
+    ],
+    insuranceProviders: getInsuranceProvidersForState("MO")
   },
   {
     "name": "Arkansas",
     "abbreviation": "AR",
     "cities": [
-        "Little Rock",        // Major city, population: 202,591
-        "Fort Smith",         // Major city, population: 89,142
-        "Fayetteville",       // Major city, population: 93,949
-        "Springdale",         // Approximately 10 miles north of Fayetteville, population: 81,799
-        "Jonesboro",          // Approximately 130 miles northeast of Little Rock, population: 78,576
-        "North Little Rock",  // Approximately 5 miles north of Little Rock, population: 66,075
-        "Conway",             // Approximately 30 miles northwest of Little Rock, population: 67,638
-        "Rogers",             // Approximately 20 miles north of Fayetteville, population: 70,522
-        "Pine Bluff",         // Approximately 45 miles southeast of Little Rock, population: 41,474
-        "Bentonville",        // Approximately 25 miles north of Fayetteville, population: 57,545
-        "Hot Springs",        // Approximately 55 miles southwest of Little Rock, population: 38,797
-        "Benton",             // Approximately 25 miles southwest of Little Rock, population: 37,214
-        "Sherwood",           // Approximately 10 miles north of Little Rock, population: 32,731
-        "Texarkana",          // Approximately 140 miles southwest of Little Rock, population: 29,657
-        "Russellville",       // Approximately 75 miles northwest of Little Rock, population: 29,338
-        "Bella Vista",        // Approximately 35 miles north of Fayetteville, population: 30,104
-        "Paragould",          // Approximately 150 miles northeast of Little Rock, population: 28,986
-        "Cabot",              // Approximately 25 miles northeast of Little Rock, population: 26,573
-        "Searcy",             // Approximately 50 miles northeast of Little Rock, population: 23,768
-        "Van Buren",          // Approximately 5 miles north of Fort Smith, population: 23,218
-        "El Dorado",          // Approximately 120 miles south of Little Rock, population: 17,651
-        "Maumelle",           // Approximately 15 miles northwest of Little Rock, population: 19,251
-        "Bryant",             // Approximately 20 miles southwest of Little Rock, population: 21,530
-        "Siloam Springs",     // Approximately 30 miles northwest of Fayetteville, population: 17,287
-        "Forrest City",       // Approximately 90 miles east of Little Rock, population: 14,048
-        "Mountain Home",      // Approximately 150 miles north of Little Rock, population: 12,825
-        "Blytheville",        // Approximately 60 miles north of Jonesboro, population: 13,406
-        "Hope",               // Approximately 110 miles southwest of Little Rock, population: 9,599
-        "Magnolia",           // Approximately 130 miles southwest of Little Rock, population: 11,570
-        "Arkadelphia",        // Approximately 65 miles southwest of Little Rock, population: 10,380
-        "Helena-West Helena", // Approximately 90 miles southeast of Little Rock, population: 10,032
-        "West Memphis",       // Approximately 130 miles east of Little Rock, population: 24,520
-        "Marion",             // Approximately 10 miles north of West Memphis, population: 12,345
-        "Malvern",            // Approximately 45 miles southwest of Little Rock, population: 10,931
-        "Camden",             // Approximately 100 miles south of Little Rock, population: 11,157
-        "Stuttgart",          // Approximately 50 miles southeast of Little Rock, population: 8,675
-        "Greenwood",          // Approximately 15 miles southeast of Fort Smith, population: 9,397
-        "Harrison",           // Approximately 140 miles north of Little Rock, population: 13,080
-        "Batesville",         // Approximately 90 miles northeast of Little Rock, population: 10,248
-        "Newport",            // Approximately 90 miles northeast of Little Rock, population: 7,552
-        "Osceola",            // Approximately 50 miles north of West Memphis, population: 6,976
-        "Wynne",              // Approximately 100 miles east of Little Rock, population: 8,367
-        "Monticello",         // Approximately 90 miles southeast of Little Rock, population: 9,467
-        "Clarksville",        // Approximately 100 miles northwest of Little Rock, population: 9,448
-        "Trumann",            // Approximately 15 miles south of Jonesboro, population: 7,243
-        "Warren",             // Approximately 90 miles south of Little Rock, population: 5,562
-        "Dumas",              // Approximately 90 miles southeast of Little Rock, population: 4,001
-        "De Queen",           // Approximately 150 miles southwest of Little Rock, population: 6,629
-        "Gentry",             // Approximately 35 miles northwest of Fayetteville, population: 3,621
-        "Gravette",           // Approximately 40 miles northwest of Fayetteville, population: 3,362
-        "Pea Ridge",          // Approximately 30 miles north of Fayetteville, population: 5,714
-        "Prairie Grove",      // Approximately 15 miles west of Fayetteville, population: 6,380
-        "Centerton",          // Approximately 25 miles north of Fayetteville, population: 16,244
-        "Lowell",             // Approximately 15 miles north of Fayetteville, population: 9,715
-        "Farmington",         // Approximately 10 miles west of Fayetteville, population: 7,584
-        "Greenbrier",         // Approximately 40 miles north of Little Rock, population: 5,706
-        "Beebe",              // Approximately 35 miles northeast of Little Rock, population: 8,019
-        "Heber Springs",      // Approximately 65 miles north of Little Rock, population: 7,165
-        "Mena",               // Approximately 120 miles west of Little Rock, population: 5,558
-        "Pocahontas",         // Approximately 150 miles northeast of Little Rock, population: 6,616
-        "Paragould",          // Approximately 150 miles northeast of Little Rock, population: 28,986
-        "Rogers",             // Approximately 20 miles north of Fayetteville, population: 70,522
-        "Searcy",             // Approximately 50 miles northeast of Little Rock, population: 23,768
-            ]
+      "Little Rock",
+      "Fort Smith",
+      "Fayetteville",
+      "Springdale",
+      "Jonesboro",
+      "North Little Rock",
+      "Conway",
+      "Rogers",
+      "Pine Bluff",
+      "Benton",
+      "Hot Springs",
+      "Sherwood",
+      "Texarkana",
+      "Bella Vista",
+      "Paragould",
+      "El Dorado",
+      "West Memphis",
+      "Searcy",
+      "Monticello",
+      "Cabot",
+      "Blytheville",
+      "Jacksonville",
+      "Russellville",
+      "Greenwood",
+      "Malvern",
+      "Harrison",
+      "Hope",
+      "Van Buren",
+      "Nashville",
+      "Mountain Home",
+      "De Queen",
+      "Mena",
+      "Siloam Springs",
+      "Glenwood",
+      "Perryville",
+      "Crossett",
+      "Warren",
+      "Dumas",
+      "Stuttgart",
+      "Bentonville",
+      "Lake Village",
+      "Ashdown",
+      "Magnolia",
+      "Sheridan",
+      "Yellville",
+      "Hoxie",
+      "Wrightsville"
+    ],
+    insuranceProviders: getInsuranceProvidersForState("AR")
   },
   {
     "name": "Louisiana",
