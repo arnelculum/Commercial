@@ -79,6 +79,48 @@ const getInsuranceProvidersForState = (stateAbbr: string) => {
 export const states: State[] = [
   // Western States
   {
+    name: "Washington",
+    abbreviation: "WA",
+    cities: ["Seattle", "Spokane", "Tacoma", "Vancouver", "Bellevue"],
+    insuranceProviders: getInsuranceProvidersForState("WA")
+  },
+  {
+    name: "Oregon",
+    abbreviation: "OR",
+    cities: ["Portland", "Salem", "Eugene", "Gresham", "Hillsboro"],
+    insuranceProviders: getInsuranceProvidersForState("OR")
+  },
+  {
+    name: "Idaho",
+    abbreviation: "ID",
+    cities: ["Boise", "Meridian", "Nampa", "Idaho Falls", "Pocatello", "Twin Falls", "Caldwell", "Coeur d'Alene", "Post Falls"],
+    insuranceProviders: getInsuranceProvidersForState("ID")
+  },
+  {
+    name: "Nevada",
+    abbreviation: "NV",
+    cities: ["Las Vegas", "Reno", "Henderson", "North Las Vegas", "Sparks", "Carson City"],
+    insuranceProviders: getInsuranceProvidersForState("NV")
+  },
+  {
+    name: "Utah",
+    abbreviation: "UT",
+    cities: ["Salt Lake City", "West Valley City", "Provo", "West Jordan", "Orem", "Sandy"],
+    insuranceProviders: getInsuranceProvidersForState("UT")
+  },
+  {
+    name: "Arizona",
+    abbreviation: "AZ",
+    cities: ["Phoenix", "Tucson", "Mesa", "Chandler", "Scottsdale", "Gilbert", "Glendale", "Tempe"],
+    insuranceProviders: getInsuranceProvidersForState("AZ")
+  },
+  {
+    name: "New Mexico",
+    abbreviation: "NM",
+    cities: ["Albuquerque", "Las Cruces", "Rio Rancho", "Santa Fe", "Roswell"],
+    insuranceProviders: getInsuranceProvidersForState("NM")
+  },
+  {
     name: "California",
     abbreviation: "CA",
     cities: [
@@ -139,12 +181,6 @@ export const states: State[] = [
     insuranceProviders: getInsuranceProvidersForState("CA")
 },
   {
-    name: "Nevada",
-    abbreviation: "NV",
-    cities: ["Las Vegas", "Reno", "Henderson", "North Las Vegas", "Sparks"],
-    insuranceProviders: getInsuranceProvidersForState("NV")
-  },
-  {
     name: "Montana",
     abbreviation: "MT",
     cities: ["Billings", "Missoula", "Great Falls", "Bozeman", "Helena"]
@@ -160,112 +196,21 @@ export const states: State[] = [
     cities: ["Honolulu", "Pearl City", "Hilo", "Kailua", "Waipahu"]
   },
   {
-    name: "New Mexico",
-    abbreviation: "NM",
-    cities: ["Albuquerque", "Las Cruces", "Rio Rancho", "Santa Fe", "Roswell"]
-  },
-  {
-    "name": "Washington",
-    "abbreviation": "WA",
+    "name": "Wyoming",
+    "abbreviation": "WY",
     "cities": [
-        "Seattle",        // Major city
-        "Spokane",        // Major city
-        "Tacoma",         // Major city
-        "Vancouver",      // Major city
-        "Bellevue",       // Major city
-        "Kent",           // Major city
-        "Everett",        // Major city
-        "Renton",         // Major city
-        "Federal Way",    // Major city
-        "Bellingham",     // Major city
-        "Walla Walla",    // Approximately 160 miles south of Spokane
-        "Richland",       // Approximately 140 miles southwest of Spokane
-        "Kennewick",      // Approximately 140 miles southwest of Spokane
-        "Pasco",          // Approximately 140 miles southwest of Spokane
-        "Yakima",         // Approximately 200 miles west of Spokane
-        "Goldendale",     // Approximately 70 miles south of Yakima
-        "Moses Lake",     // Approximately 100 miles west of Spokane
-        "Quincy",         // Approximately 130 miles west of Spokane
-        "Ephrata",        // Approximately 120 miles west of Spokane
-        "Forks",          // Approximately 140 miles northwest of Seattle
-        "Port Angeles",   // Approximately 85 miles northwest of Seattle
-        "Aberdeen",       // Approximately 110 miles southwest of Seattle
-        "Hoquiam",        // Approximately 110 miles southwest of Seattle
-        "Ocean Shores",   // Approximately 130 miles southwest of Seattle
-        "South Bend",     // Approximately 130 miles southwest of Seattle
-        "Raymond",        // Approximately 130 miles southwest of Seattle
-        "Shelton",        // Approximately 85 miles southwest of Seattle
-        "Colville",       // Approximately 70 miles north of Spokane
-        "Pullman",        // Approximately 75 miles south of Spokane
-        "Clarkston",      // Approximately 110 miles south of Spokane
-        "Chewelah",       // Approximately 50 miles north of Spokane
-        "Kettle Falls",   // Approximately 80 miles north of Spokane
-        "Wenatchee",      // Approximately 140 miles east of Seattle
-        "Cashmere"        // Approximately 130 miles east of Seattle
+        "Cheyenne",        // Major city, population: 65,168
+        "Casper",          // Major city, population: 58,720
+        "Gillette",        // Major city, population: 33,496
+        "Laramie",         // Major city, population: 32,152
+        "Rock Springs",    // Major city, population: 22,954
+        "Sheridan",        // Major city, population: 19,543
+        "Evanston",        // Approximately 83 miles southwest of Rock Springs, population: 11,807
+        "Green River",     // Approximately 12 miles west of Rock Springs, population: 11,496
+        "Riverton",        // Approximately 121 miles northwest of Casper, population: 10,923
+        "Jackson",         // Approximately 180 miles west of Casper, population: 10,639
+        "Cody"             // Approximately 148 miles northwest of Casper, population: 10,240
     ]
-},
-  {
-    "name": "Oregon",
-    "abbreviation": "OR",
-    "cities": [
-        "Portland",        // Major city
-        "Salem",           // Major city
-        "Eugene",          // Major city
-        "Gresham",         // Approximately 16 miles east of Portland
-        "Hillsboro",       // Approximately 20 miles west of Portland
-        "Beaverton",       // Approximately 7 miles west of Portland
-        "Bend",            // Major city
-        "Medford",         // Major city
-        "Springfield",     // Approximately 5 miles east of Eugene
-        "Corvallis",       // Approximately 37 miles south of Salem
-        "Albany",          // Approximately 26 miles south of Salem
-        "Tigard",          // Approximately 10 miles southwest of Portland
-        "Lake Oswego",     // Approximately 8 miles south of Portland
-        "Keizer",          // Approximately 5 miles north of Salem
-        "Grants Pass",     // Approximately 30 miles northwest of Medford
-        "Oregon City",     // Approximately 13 miles south of Portland
-        "Redmond",         // Approximately 17 miles north of Bend
-        "Tualatin",        // Approximately 12 miles southwest of Portland
-        "West Linn",       // Approximately 12 miles south of Portland
-        "Woodburn",        // Approximately 20 miles north of Salem
-        "Newberg",         // Approximately 22 miles southwest of Portland
-        "Wilsonville",     // Approximately 18 miles south of Portland
-        "Forest Grove",    // Approximately 25 miles west of Portland
-        "Happy Valley",    // Approximately 13 miles southeast of Portland
-        "Milwaukie",       // Approximately 7 miles south of Portland
-        "Sherwood",        // Approximately 17 miles southwest of Portland
-        "Central Point",   // Approximately 5 miles northwest of Medford
-        "Klamath Falls",   // Approximately 70 miles southeast of Medford
-        "Ashland",         // Approximately 13 miles south of Medford
-        "McMinnville",     // Approximately 35 miles southwest of Portland
-        "Roseburg",        // Approximately 70 miles south of Eugene
-        "The Dalles",      // Approximately 80 miles east of Portland
-        "Pendleton",       // Approximately 210 miles east of Portland
-        "Astoria",         // Approximately 97 miles northwest of Portland
-        "Hermiston",       // Approximately 180 miles east of Portland
-        "Coos Bay",        // Approximately 115 miles southwest of Eugene
-        "La Grande",       // Approximately 260 miles east of Portland
-        "St. Helens",      // Approximately 30 miles northwest of Portland
-        "Lebanon",         // Approximately 45 miles south of Salem
-        "Dallas",          // Approximately 15 miles west of Salem
-        "Canby",           // Approximately 25 miles south of Portland
-        "Ontario",         // Approximately 375 miles east of Portland
-        "Seaside",         // Approximately 80 miles northwest of Portland
-        "Florence",        // Approximately 60 miles west of Eugene
-        "Newport",         // Approximately 55 miles west of Corvallis
-        "Lincoln City",    // Approximately 60 miles west of Salem
-        "Tillamook",       // Approximately 75 miles west of Portland
-        "Baker City",      // Approximately 300 miles east of Portland
-        "Prineville",      // Approximately 35 miles northeast of Bend
-        "Madras",          // Approximately 45 miles north of Bend
-        "Sandy",           // Approximately 30 miles east of Portland
-        "Silverton",       // Approximately 15 miles northeast of Salem
-        "Monmouth",        // Approximately 20 miles southwest of Salem
-        "Independence",    // Approximately 15 miles southwest of Salem
-        "Cottage Grove",   // Approximately 20 miles south of Eugene
-        "Sutherlin"        // Approximately 12 miles north of Roseburg
-    ],
-    insuranceProviders: getInsuranceProvidersForState("OR")
 },
   {
     "name": "Idaho",
@@ -873,7 +818,7 @@ export const states: State[] = [
   {
     name: "South Carolina",
     abbreviation: "SC",
-    cities: ["Columbia", "Charleston", "North Charleston", "Mount Pleasant", "Rock Hill"]
+    cities: ["Columbia", "Charleston", "North Charleston", "Mount Pleasant", "Rock Hill", "Greenville"]
   },
   {
     name: "Georgia",
@@ -1530,3 +1475,10 @@ export const jobListings = generateJobListings();
 export const getInsuranceProviders = (stateAbbr: string) => {
   return getInsuranceProvidersForState(stateAbbr);
 };
+
+// Make sure each state has its insuranceProviders set
+states.forEach(state => {
+  if (!state.insuranceProviders) {
+    state.insuranceProviders = getInsuranceProvidersForState(state.abbreviation);
+  }
+});
