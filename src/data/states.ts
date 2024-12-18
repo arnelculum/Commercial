@@ -65,9 +65,9 @@ const getInsuranceProvidersForState = (stateAbbr: string) => {
       ],
       website: "https://driveradvantage.com",
       additionalServices: [
-        "Factoring",
+        "insurance",
         "Fuel Cards",
-        "Compliance & Safety Division",
+        "Compliance & Safety",
         "Equipment Financing"
       ]
     });
