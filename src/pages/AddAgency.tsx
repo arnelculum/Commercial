@@ -51,7 +51,7 @@ export default function AddAgency() {
         </h2>
         <div className="text-center">
           <a
-            href="https://buy.stripe.com/4gw9DDfIt3fZ16E002"
+            href="https://stripe.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-yellow-500 text-blue-900 font-semibold px-8 py-4 rounded-lg hover:bg-yellow-400 transition-colors text-lg"
