@@ -72,7 +72,7 @@ export default function CityPage() {
 
   // Replace toggleForm with direct URL handler
   const handleQuoteRequest = () => {
-    window.open('https://form.jotform.com/243191254141145', '_blank');
+    window.open('https://driveradvantage.com/contact-us/', '_blank');
   };
 
   return (
